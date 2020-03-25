@@ -50,10 +50,11 @@ void Graph::load(std::istream &is){
 }
 
 void Graph::save(std::ostream &os){
-	os << num_nodes << '\n';
+	os << num_nodes << '\n' << '\n';
 	for (Point2i &p : node_locations){
 		os << p.x << ' ' << p.y << '\n';
 	}
+	os << '\n';
 	if (adjacency_matrix.rows != num_nodes) resizeAdjacencyMatrix();
 	printMat(os, adjacency_matrix);
 }
